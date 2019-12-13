@@ -1,15 +1,48 @@
 <?php
 
-namespace RzekaMansur;
+use stolyarov\Log;
+use stolyarov\QuadraticEq;
+use stolyarov\StolyarovException;
 
-ini_set('display_errors', 1);
-error_reporting(-1);
+include 'core/EquationInterface.php';
+include 'core/LogInterface.php';
+include 'core/LogAbstract.php';
+include 'stolyarov/StolyarovException.php';
+include 'stolyarov/LinearEq.php';
+include 'stolyarov/QuadraticEq.php';
+include 'stolyarov/Log.php';
 
-include_once('RzekaMansur/RzekaMansur_Exception.php');
-include_once('core/EquationInterface.php');
-include_once('core/LogAbstract.php');
-include_once('core/LogInterface.php');
-include_once('RzekaMansur/Linear.php');
-include_once('RzekaMansur/Square.php');
-include_once('RzekaMansur/MyLog.php');
-?>
+$eq=new QuadraticEq();
+
+$a=0;
+$b=0;
+$c=0;
+
+try {
+    function entercheck($num,$letter)
+    {
+        $pattern = '#^[0-9]*[.]?[0-9]+$#';
+        for (;;) {
+            $num=readline("Enter $letter=");
+            echo "\n";
+            if(preg_match($pattern,$num))
+            {
+                return $num;
+            }
+            else {
+                echo "Inappropriate symbols. Can only type numbers and dot\n";
+            }
+        }
+        return $num;
+    }
+
+    $a=entercheck($a,'a');
+    $b=entercheck($b,'b');
+    $c=entercheck($c,'c');
+
+    $eq->solve($a,$b,$c);
+} catch (StolyarovException $e) {
+    Log::log("Error: ".$e->getMessage());
+}
+
+Log::write();
