@@ -1,8 +1,8 @@
 <?php
     require __DIR__."/vendor/autoload.php";
-use RzekaMansur\Log;
-use RzekaMansur\QuadraticEq;
-use RzekaMansur\RzekaMansur_Exception;
+use specialepic\Log;
+use specialepic\QuadraticEq;
+use specialepic\RzekaMansur_Exception;
 $eq=new QuadraticEq();
 $a=0;
 $b=0;
