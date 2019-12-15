@@ -1,0 +1,45 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "d55ec6c3ddf2161d9ec41be6865cec6c",
+    "packages": [
+        {
+            "name": "rok9ru/trpo-core",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rok9ru/trpo-core.git",
+                "reference": "master"
+            },
+            "type": "library",
+            "time": "2019-11-23T10:22:55+00:00"
+        },
+        {
+            "name": "specialEpic/lib",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/specialEpic/lib.git",
+                "reference": "master"
+            },
+            "type": "library",
+            "time": "2019-12-14T08:17:21+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "specialepic/lib": 20,
+        "rok9ru/trpo-core": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=5.3.0"
+    },
+    "platform-dev": []
+}

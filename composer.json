@@ -1,0 +1,38 @@
+{
+  "minimum-stability": "dev",
+  "require": {
+    "php":">=5.3.0",
+    "specialepic/lib":"dev-master",
+    "rok9ru/trpo-core":"dev-master"
+  },"repositories":[
+    {
+      "type":"package",
+      "package":{
+        "name":"rok9ru/trpo-core",
+        "version":"dev-master",
+        "source":{
+          "type":"git",
+          "url":"https://github.com/rok9ru/trpo-core.git",
+          "reference":"master"
+        }
+      }
+    },{
+      "type":"package",
+      "package":{
+        "name":"specialepic/lib",
+        "version":"dev-master",
+        "source":{
+          "type":"git",
+          "url":"https://github.com/specialEpic/lib.git",
+          "reference":"master"
+        }
+      }
+    }
+  ],
+  "autoload":{
+    "psr-4": {
+      "RzekaMansur\\": "vendor/specialepic/lib",
+      "core\\": "vendor/rok9ru/trpo-core"
+    }
+  }
+}

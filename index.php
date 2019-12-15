@@ -1,23 +1,12 @@
 <?php
-
-use stolyarov\Log;
-use stolyarov\QuadraticEq;
-use stolyarov\StolyarovException;
-
-include 'core/EquationInterface.php';
-include 'core/LogInterface.php';
-include 'core/LogAbstract.php';
-include 'stolyarov/StolyarovException.php';
-include 'stolyarov/LinearEq.php';
-include 'stolyarov/QuadraticEq.php';
-include 'stolyarov/Log.php';
-
+    require __DIR__."/vendor/autoload.php";
+use RzekaMansur\Log;
+use RzekaMansur\QuadraticEq;
+use RzekaMansur\RzekaMansur_Exception;
 $eq=new QuadraticEq();
-
 $a=0;
 $b=0;
 $c=0;
-
 try {
     function entercheck($num,$letter)
     {
@@ -35,14 +24,11 @@ try {
         }
         return $num;
     }
-
     $a=entercheck($a,'a');
     $b=entercheck($b,'b');
     $c=entercheck($c,'c');
-
     $eq->solve($a,$b,$c);
-} catch (StolyarovException $e) {
+} catch (RzekaMansur_Exception $e) {
     Log::log("Error: ".$e->getMessage());
 }
-
 Log::write();
