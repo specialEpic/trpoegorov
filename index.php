@@ -28,7 +28,7 @@ try {
     $b=entercheck($b,'b');
     $c=entercheck($c,'c');
     $eq->solve($a,$b,$c);
-	Log::log("Equation: $a*x^2+$bx+$c");
+	Log::log("Equation: {$a}*x^2+{$b}x+{$c}\n");
 } catch (RzekaMansur_Exception $e) {
     Log::log("Error: ".$e->getMessage());
 }
