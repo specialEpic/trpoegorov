@@ -7,7 +7,6 @@ $eq=new QuadraticEq();
 $a=0;
 $b=0;
 $c=0;
-Log::log("Version: ".file_get_contents("version"));
 try {
     function entercheck($num,$letter)
     {
@@ -28,9 +27,8 @@ try {
     $a=entercheck($a,'a');
     $b=entercheck($b,'b');
     $c=entercheck($c,'c');
-	Log::log("Equation: {$a}*x^2+{$b}x+{$c}\n");
     $eq->solve($a,$b,$c);
 } catch (RzekaMansur_Exception $e) {
-    Log::log("Error: ".$e->getMessage());
+    Log::log("Version: ".file_get_contents("version")."\n"."Error: ".$e->getMessage());
 }
-Log::write()."\n";
+Log::write();
